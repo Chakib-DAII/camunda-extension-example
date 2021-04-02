@@ -1,0 +1,22 @@
+server.port: ${PORT:9090}
+
+#spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+spring.datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/camunda
+  username: <username>
+  password: <password>
+  auto-commit: false
+  spring.jpa:
+  hibernate.ddl-auto: update
+  generate-ddl: true
+  show-sql: true
+  hibernate.naming.implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  properties.hibernate:
+    dialect: org.hibernate.dialect.PostgreSQL92Dialect
+    temp.use_jdbc_metadata_defaults: false
+    enable_lazy_load_no_trans: true
+
+camunda.bpm.admin-user:
+  id: <username>
+  password: <password>
